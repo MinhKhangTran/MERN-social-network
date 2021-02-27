@@ -4,9 +4,12 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import colors from "colors";
 // ErrorHandler
-import { errorHandler } from "./middlewares/errorMiddleware";
+import { errorHandler } from "./middlewares/errorMiddleware.js";
 // connect DB
 import connectDB from "./config/db.js";
+
+// Routes imports
+import userRoute from "./routes/users.js";
 // config .env
 dotenv.config();
 
@@ -22,10 +25,8 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// Routes
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+// User-Routes
+app.use("/api/a1/users", userRoute);
 
 // errorHandler
 app.use(errorHandler);
