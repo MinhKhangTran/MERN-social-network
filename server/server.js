@@ -3,11 +3,13 @@ import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import colors from "colors";
+// ErrorHandler
+import { errorHandler } from "./middlewares/errorMiddleware";
+// connect DB
+import connectDB from "./config/db.js";
 // config .env
 dotenv.config();
 
-// connect DB
-import connectDB from "./config/db.js";
 connectDB();
 
 // init app
@@ -24,6 +26,9 @@ if (process.env.NODE_ENV === "development") {
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
+
+// errorHandler
+app.use(errorHandler);
 
 // Port and start
 const PORT = process.env.PORT || 5000;
