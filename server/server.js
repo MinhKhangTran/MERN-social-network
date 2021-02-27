@@ -10,6 +10,7 @@ import connectDB from "./config/db.js";
 
 // Routes imports
 import userRoute from "./routes/users.js";
+import profileRoute from "./routes/profiles.js";
 // config .env
 dotenv.config();
 
@@ -27,6 +28,8 @@ if (process.env.NODE_ENV === "development") {
 
 // User-Routes
 app.use("/api/a1/users", userRoute);
+// Profile-Routes
+app.use("/api/a1/profiles", profileRoute);
 
 // errorHandler
 app.use(errorHandler);
