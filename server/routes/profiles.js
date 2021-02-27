@@ -18,7 +18,7 @@ import {
   deleteExp,
   updateEdu,
   deleteEdu,
-  getUserRepos,
+  //   getUserRepos,
 } from "../controllers/profiles.js";
 
 const router = express.Router();
@@ -35,5 +35,5 @@ router.route("/exp/:id").delete(protect, deleteExp);
 router.route("/edu").put(protect, updateEduValidator, runValidation, updateEdu);
 router.route("/edu/:id").delete(protect, deleteEdu);
 // github
-router.route("/github/:username").get(getUserRepos);
+// router.route("/github/:username").get(getUserRepos);
 export default router;

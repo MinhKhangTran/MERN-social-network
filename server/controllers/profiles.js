@@ -107,18 +107,18 @@ export const getProfileById = asyncHandler(async (req, res) => {
 // @desc    Get github name
 // @route   GET /api/a1/profiles/github/:username
 // @access  public
-export const getUserRepos = asyncHandler(async (req, res) => {
-  const uri = encodeURI(
-    `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
-  );
-  const headers = {
-    "user-agent": "node.js",
-    Authorization: `token ${config.get("githubToken")}`,
-  };
+// export const getUserRepos = asyncHandler(async (req, res) => {
+//   const uri = encodeURI(
+//     `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
+//   );
+//   const headers = {
+//     "user-agent": "node.js",
+//     Authorization: `token ${config.get("githubToken")}`,
+//   };
 
-  const gitHubResponse = await axios.get(uri, { headers });
-  return res.json(gitHubResponse.data);
-});
+//   const gitHubResponse = await axios.get(uri, { headers });
+//   return res.json(gitHubResponse.data);
+// });
 
 // @desc    Delete profile by ID
 // @route   DELETE /api/a1/profiles/:id
