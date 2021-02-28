@@ -2,7 +2,7 @@ import asyncHandler from "express-async-handler";
 // Model
 import User from "../models/User.js";
 import Profile from "../models/Profile.js";
-// import Post from "../models/Post.js";
+import Post from "../models/Post.js";
 // normalize
 import normalize from "normalize-url";
 
@@ -126,7 +126,7 @@ export const getProfileById = asyncHandler(async (req, res) => {
 export const deleteProfile = asyncHandler(async (req, res) => {
   // remove all models from db
   await Promise.all([
-    // Post.deleteMany({user:req.user.id})
+    Post.deleteMany({ user: req.user.id }),
     Profile.findOneAndRemove({ user: req.user.id }),
     User.findOneAndRemove({ _id: req.user.id }),
   ]);

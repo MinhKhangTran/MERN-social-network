@@ -1,14 +1,36 @@
 import express from "express";
 // Validations
 import { runValidation } from "../validators/index.js";
-import { registerValidator, loginValidator } from "../validators/userCheck.js";
+import {
+  createPostValidator,
+  createCommentValidator,
+} from "../validators/postCheck.js";
 // auth Middle
 import { protect } from "../middlewares/authMiddleware.js";
-// Model
-import User from "../models/User.js";
+// controllers
+import {
+  createPost,
+  getPosts,
+  getPostById,
+  deletePost,
+  likePost,
+  unlikePost,
+  createComment,
+  deleteComment,
+} from "../controllers/posts.js";
 
-const router = express.Route();
+const router = express.Router();
 
-// Login
-router.route("/login").post();
-router.route("/register").post();
+router
+  .route("/")
+  .post(createPostValidator, runValidation, protect, createPost)
+  .get(protect, getPosts);
+router.route("/:id").get(protect, getPostById).delete(protect, deletePost);
+router.route("/like/:id").put(protect, likePost);
+router.route("/unlike/:id").put(protect, unlikePost);
+router
+  .route("/comment/:id")
+  .post(createCommentValidator, runValidation, protect, createComment);
+router.route("/comment/:id/:comment_id").delete(deleteComment);
+
+export default router;
