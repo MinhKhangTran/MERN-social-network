@@ -31,6 +31,6 @@ router.route("/unlike/:id").put(protect, unlikePost);
 router
   .route("/comment/:id")
   .post(createCommentValidator, runValidation, protect, createComment);
-router.route("/comment/:id/:comment_id").delete(deleteComment);
+router.route("/comment/:id/:comment_id").delete(protect, deleteComment);
 
 export default router;

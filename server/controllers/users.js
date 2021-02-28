@@ -85,3 +85,5 @@ export const getLoggedUser = asyncHandler(async (req, res) => {
 
 // Francis token
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwM2EwOWM4MGQ0MmVmNDVmMGI0NDNmMiIsImlhdCI6MTYxNDQxNjM0OCwiZXhwIjoxNjE1MDIxMTQ4fQ.ltJ2NIrpa8Nw53djzZp1LzFzcjnCpOshundvUP7Llhs
+// julian token
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwM2I2MWJlZTIwODNiNTFiY2U3M2Y2NSIsImlhdCI6MTYxNDUwNDM4MiwiZXhwIjoxNjE1MTA5MTgyfQ.ZryVo7oxuIXocrP0GLE4U4ySuGTa3RGc24zqs-SrYZ8
