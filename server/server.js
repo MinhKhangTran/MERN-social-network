@@ -28,11 +28,11 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // User-Routes
-app.use("/api/a1/users", userRoute);
+app.use("/api/a1/users", cors(), userRoute);
 // Profile-Routes
-app.use("/api/a1/profiles", profileRoute);
+app.use("/api/a1/profiles", cors(), profileRoute);
 // Post-Routes
-app.use("/api/a1/posts", postRoute);
+app.use("/api/a1/posts", cors(), postRoute);
 
 // errorHandler
 app.use(errorHandler);
