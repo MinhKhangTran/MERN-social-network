@@ -1,0 +1,2 @@
+[0304/193316.899:ERROR:directory_reader_win.cc(43)] FindFirstFile: Das System kann den angegebenen Pfad nicht finden. (0x3)
+[0304/193317.149:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\MinhKhang\AppData\Local\CryptoTab Browser\User Data\Crashpad\attachments\b74b377a-ae35-47ff-9876-b18f3f556fe5: Das System kann den angegebenen Pfad nicht finden. (0x3)
